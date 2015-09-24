@@ -6,8 +6,9 @@ class Pricing
   end
 
 
-  def flat_markup(base)
+  def flat_markup
     @flat_markup = @base + (@base * 0.05)
-    (@flat_markup * 100).floor / 100.0
+    (@flat_markup * 100).floor / 100.to_f
   end
+
 end
