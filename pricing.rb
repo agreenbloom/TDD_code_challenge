@@ -1,8 +1,9 @@
 class Pricing
-  attr_accessor :base, :flat_markup
+  attr_accessor :base, :flat_markup, :person
 
   def initialize(base)
     @base = base
+    @person = person
   end
 
 
@@ -12,6 +13,9 @@ class Pricing
   end
 
   def person_markup
+   @person_markup = @base + (@base * 0.012)
+   (@person_markup * 100).floor / 100.to_f
+
   end
 
 end
