@@ -10,4 +10,8 @@ class TestPricing < MiniTest::Test
     assert_equal 1364.98, Pricing.new(1299.99).flat_markup
   end
 
+  def test_add_one_person
+    assert_equal 1315.58, Pricing.new(1299.99).person_markup
+  end
+
 end

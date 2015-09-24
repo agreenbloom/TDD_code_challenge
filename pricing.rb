@@ -11,4 +11,7 @@ class Pricing
     (@flat_markup * 100).floor / 100.to_f
   end
 
+  def person_markup
+  end
+
 end
