@@ -21,8 +21,11 @@ class Product
   end
 
   def material_markup
-   pharm_markup = flat_markup * 0.075
-   (pharm_markup * 100).floor / 100.to_f
+   # pharm_markup = flat_markup * 0.075
+   # (pharm_markup * 100).floor / 100.to_f
+
+   food_markup = flat_markup * 0.13
+   (food_markup * 100).floor / 100.to_f
   end
 
 
