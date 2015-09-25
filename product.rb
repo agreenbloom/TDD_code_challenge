@@ -1,10 +1,11 @@
 class Product
   attr_accessor :price, :person, :material
 
-  def initialize(price)
+  def initialize(price, person, material)
     @price = price
     @person = person
     @material = material
+
   end
 
 
@@ -21,17 +22,23 @@ class Product
   end
 
   def material_markup
-   if
-    @pharm_markup = flat_markup * 0.075
-     (pharm_markup * 100).floor / 100.to_f
-   elsif
-     @food_markup = flat_markup * 0.13
-     (food_markup * 100).floor / 100.to_f
-   elsif
-     @electronic_markup = flat_markup * 0.02
-     (electronic_markup * 100).floor / 100.to_f
-   end
- end
+    @material
+    if
+      @pharm_markup = flat_markup * 0.075
+      (pharm_markup * 100).floor / 100.to_f
+    elsif
+      @food_markup = flat_markup * 0.13
+      (food_markup * 100).floor / 100.to_f
+    elsif
+      @electronic_markup = flat_markup * 0.02
+      (electronic_markup * 100).floor / 100.to_f
+    else
+      0
+    end
+  end
 
+  def total
+   total_price = flat_markup + person_markup + material_markup
+  end
 
 end

@@ -6,7 +6,7 @@ require './product'
 class TestProduct < MiniTest::Test
 
   def setup
-    @product = Product.new(1299.99)
+    @product = Product.new(1299.99, 3, @material)
   end
   # # test base markup
   # def test_flat_markup_add_percentage
@@ -57,6 +57,10 @@ class TestProduct < MiniTest::Test
     else
       @product
     end
+  end
+
+  def test_total_price
+    assert_equal 1591.58, Product.new(1299.99, 3, @material)
   end
 
 
