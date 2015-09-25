@@ -30,9 +30,13 @@ class TestProduct < MiniTest::Test
   #   assert_equal 102.37, Product.new(1299.99).material_markup
   # end
 
-  def test_food_markup
-    assert_equal 177.44, Product.new(1299.99).material_markup
-  end
+# Comment out while testing electronic markup
+  # def test_food_markup
+  #   assert_equal 177.44, Product.new(1299.99).material_markup
+  # end
 
+  def test_electronic_markup
+    assert_equal 27.29, Product.new(1299.99).material_markup
+  end
 
 end
