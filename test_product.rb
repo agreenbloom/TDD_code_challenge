@@ -5,6 +5,9 @@ require './product'
 
 class TestProduct < MiniTest::Test
 
+  def setup
+    @product = Product.new(1299.99)
+  end
   # # test base markup
   # def test_flat_markup_add_percentage
   #   assert_equal 1364.98, Product.new(1299.99).flat_markup
@@ -25,18 +28,36 @@ class TestProduct < MiniTest::Test
   #   assert_equal 49.13, Product.new(1299.99, 3.0).person_markup
   # end
 
-#Comment out pharm test to see if food test passes
+#Tests for individual material markups
   # def test_pharmaceutical_markup
   #   assert_equal 102.37, Product.new(1299.99).material_markup
   # end
 
-# Comment out while testing electronic markup
   # def test_food_markup
   #   assert_equal 177.44, Product.new(1299.99).material_markup
   # end
 
-  def test_electronic_markup
-    assert_equal 27.29, Product.new(1299.99).material_markup
+  # def test_electronic_markup
+  #   assert_equal 27.29, Product.new(1299.99).material_markup
+  # end
+
+
+
+  def test_material_markup
+
+    if
+      @pharm_markup
+      assert_equal 102, @product.material_markup
+    elsif
+      @food_markup
+      assert_equal 177.44, @product.material_markup
+    elsif
+      @electronic_markup
+      assert_equal 27.27, @product.material_markup
+    else
+      @product
+    end
   end
+
 
 end
