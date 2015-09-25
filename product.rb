@@ -1,7 +1,7 @@
 class Product
   attr_accessor :price, :person
 
-  def initialize(price)
+  def initialize(price, person)
     @price = price
     @person = person
   end
@@ -14,9 +14,9 @@ class Product
   end
 
   def person_markup
-   person_markup = flat_markup + (@price * 0.012)
-   (person_markup * 100).floor / 100.to_f
-
+    @people = @person * 0.012
+    person_markup = (flat_markup * @people)
+    (person_markup * 100).floor / 100.to_f
   end
 
 
