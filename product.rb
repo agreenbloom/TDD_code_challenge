@@ -38,8 +38,8 @@ class Product
   end
 
   def total
-   total_price = (flat_markup + person_markup + material_markup)
-   (total_price * 100).floor / 100.to_f.round(2)
+   total_price = (flat_markup + person_markup + material_markup).round(2)
+   # (total_price * 100).floor / 100.to_f
 
 
   end

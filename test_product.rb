@@ -42,7 +42,7 @@ class TestProduct < MiniTest::Test
 
 
   def test_material_markup_drugs
-      assert_equal 102, Product.new(1299, 1, 'pharmaceuticals').material_markup
+      assert_equal 102, Product.new(1299.99, 1, 'pharmaceuticals').material_markup.floor
   end
 
   def test_material_food
